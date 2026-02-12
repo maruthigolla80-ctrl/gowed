@@ -1,12 +1,1437 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            width: 1280px;
+            height: 48px;
+            padding: 8px 120px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            opacity: 10000;
+        }
+
+
+        .nav-left {
+
+            display: flex;
+            align-items: center;
+        }
+
+
+        .nav-middle {
+            flex: 1;
+            display: flex;
+            list-style: none;
+            gap: 48px;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+
+
+        }
+
+        .nav-middle a {
+            text-decoration: none;
+            color: #38091a;
+            font-size: 16px;
+            font-family: 'Kumbh Sans', sans-serif !important;
+
+
+        }
+
+
+        .nav-right {
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn {
+            border-radius: 22px;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            gap: 8px;
+        }
+
+        .bar {
+            width: 12px;
+            height: 12px;
+        }
+
+        .pro {
+            width: 24px;
+            height: 24px;
+        }
+
+        .container {
+            max-width: 56rem;
+            margin: 0 auto;
+            padding-top: 60px;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+
+
+        .heading {
+            text-align: center;
+            color: #38091a;
+            font-size: 44px;
+            margin-bottom: 16px;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+
+
+        .desc {
+            text-align: center;
+            color: #212529;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+
+
+        .btns {
+            background-color: #a61a6f;
+            color: #ffffff;
+            padding: 16px 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btns:hover {
+            background-color: #7a1451;
+        }
+
+
+        .text {
+            color: #a61a6f;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 8px;
+            margin-top: 8px;
+            display: flex;
+        }
+
+        .text a {
+            color: #a61a6f;
+            text-decoration: underline;
+            margin-left: 4px;
+            display: flex;
+        }
+
+        .align {
+            padding: 56px 12px;
+        }
+
+        .container1 {
+            max-width: 56rem;
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+
+        .para {
+            text-align: center;
+            color: #0a0a0a;
+            font-size: 16px;
+            padding: 0 10px 20px;
+            margin-bottom: 0 312px 24px;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+
+        .img {
+            width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding-top: 10px;
+            font-family: "Kumbh Sans", sans-serif;
+
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .cards {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cards:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .card-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+
+        .card-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            color: #1f2937;
+        }
+
+
+        .location {
+            display: flex;
+            align-items: center;
+        }
+
+        .location-icon {
+            width: 20px;
+            height: 20px;
+            color: #be185d;
+            margin-right: 8px;
+        }
+
+        .title {
+            font-weight: 600;
+        }
+
+
+        .arrow-box {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #be185d;
+            border-radius: 50%;
+            opacity: 0;
+            visibility: hidden;
+
+        }
+
+
+        .cards:hover .arrow-box {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        .explore {
+            display: flex;
+            max-width: fit-content;
+            background-color: #a61a6f;
+            color: white;
+            padding: 16px 24px;
+            border-radius: calc(infinity * 1px);
+            transition: all 0.3s ease;
+            justify-self: center;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .third {
+            background-color: #f9fafb;
+            padding: 16px 48px;
+        }
+
+        .third-1 {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .third-2 {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .third-h {
+            font-size: 30px;
+            margin: 3px 20px;
+            display: flex;
+            text-align: center;
+            justify-self: flex-start;
+            font-family: "Kumbh Sans", sans-serif;
+
+        }
+
+        .third-b {
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background-color: #a61a6f;
+        }
+
+        .box {
+            background-color: white;
+            padding: 60px;
+            border-radius: 4px;
+
+        }
+
+        .box-info {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .border {
+            background-color: white;
+            padding: 60px 16px;
+        }
+
+        .main {
+            width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-top: 127px;
+            margin-bottom: 50px;
+        }
+
+        .heading1 {
+            font-size: 30px;
+            margin: 0 0 16px;
+            color: #38091a;
+        }
+
+        .paragraph {
+
+            font-size: 16px;
+            margin: 0 128px 40px;
+            color: var(--color-gray-600);
+        }
+
+        .templates {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .testimonials {
+            width: 580px;
+            height: 124px;
+            background-color: white;
+            padding: 24px;
+            text-align: left;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 2px 4px 4px whitesmoke;
+        }
+
+        .photo {
+            display: flex;
+            text-align: center;
+            margin-bottom: 16px;
+            gap: 8px;
+        }
+
+        .one {
+            background-color: #f3f4f6;
+            padding: 60px 0;
+            font-size: 16px;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+
+        .white {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .whitebox {
+            background-color: white;
+            width: 182px;
+            height: 204px;
+            padding: 60px;
+            border-radius: 8px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .search {
+            width: 320px;
+            height: 41px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: left;
+            border: 1px solid #4B5563;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .table {
+            background-color: white;
+            padding: 48px 0;
+
+        }
+
+        .table1 {
+            max-width: 1280px;
+            margin: 0 120.4px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .table2 {
+            max-width: 1280px;
+            height: 750.4px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .table3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+
+        .table4 {
+            display: flex;
+            justify-content: center;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .table5 {
+            display: flex;
+            justify-content: center;
+            padding: 12px;
+            color: white;
+            background-color: #a61a6f;
+            border: gray solid 1px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .table6 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top-width: 1px;
+            border-top-style: dashed;
+            border-top-color: #d1d5db;
+        }
+
+        .table7 {
+            display: flex;
+            padding: 12px;
+            align-items: center;
+            justify-content: center;
+
+            border-bottom: 1px dashed #d1d5db;
+            border-left: 1px dashed #d1d5db;
+            border-right: 1px dashed #d1d5db;
+        }
+
+        .table8 {
+            display: flex;
+            padding: 16px;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px dashed #d1d5db;
+            border-left: 1px dashed #d1d5db;
+            border-right: 1px dashed #d1d5db;
+        }
+
+        .table9 {
+            display: flex;
+            padding: 16px;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px dashed #d1d5db;
+            border-left: 1px dashed #d1d5db;
+            border-right: 1px dashed #d1d5db;
+            background-color: #fdf2f8;
+
+        }
+
+        .gallery {
+            padding: 36px 0;
+        }
+
+        .gallery1 {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gallery1 {
+            padding: 0 12px 24px;
+            text-align: center;
+        }
+
+        .gallh {
+            margin: 0 0 12px;
+            font-size: 30px;
+            color: #38091a;
+        }
+
+        .gallp {
+            margin: 0 244px;
+            max-width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #4b5563;
+        }
+        .hotel{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 36px; 
+        }
+    </style>
 </head>
+
 <body>
-    <p>hello</p>
-    <div>hello world</div>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#" class="logo"> <img style="width: 179.26px; height:40px;"
+                    src="https://img.gowed.in/site-images/GoWed-Logo.webp" alt=""></a>
+        </div>
+
+        <ul class="nav-middle">
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">planers</a></li>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Why Go Wed</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="#"><i style="color: #0a0a0a;" class="fa-regular fa-heart"></i></a>
+            <a href="#"><i style="color: #0a0a0a;" class="fa-solid fa-phone"></i></a>
+            <button class="btn">
+                <span class="bar"><i class="fa-solid fa-bars"></i></span>
+                <span class="pro"><i class="fa-solid fa-user"></i></span>
+
+            </button>
+        </div>
+    </nav>
+    <div class="align">
+        <div class="container">
+
+            <h1 class="heading">
+                Discover &amp; Book the Best Hotels for Your Indian Wedding Abroad
+            </h1>
+
+
+            <p class="desc">
+                Compare venues, get custom proposals, and book your dream wedding hotel in one place.
+            </p>
+
+
+            <div class="button">
+                <button class="btns">Get Started</button>
+            </div>
+
+
+            <span class="text">
+                *For any queries, call us at
+                <a href="#">+91-9429691195</a>
+            </span>
+        </div>
+    </div>
+
+    <section class="container1">
+        <h2 style="font-size: 30px; margin: 0 0 16px;color:#38091a;">Our Featured Wedding Destinations</h2>
+        <p class="para">Explore the most breathtaking wedding destinations around the world. From serene beaches to
+            royal palaces, our
+            handpicked locations offer the perfect backdrop for your dream wedding.</p>
+    </section>
+    <div class="img">
+        <div class="grid">
+            <div class="cards">
+                <a href="#" aria-label="View details for Abu Dhabi">
+                    <img src="https://img.gowed.in/wd-countries/abudhabi.webp" alt="Abu Dhabi" class="card-img">
+                </a>
+
+                <div class="card-content">
+                    <div class="location">
+
+                        <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="title">Abu Dhabi</span>
+                    </div>
+
+                    <div class="arrow-box">
+
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <a href="#" aria-label="View details for Abu Dhabi">
+                    <img src="https://img.gowed.in/wd-countries/oman_wd.webp" alt="Abu Dhabi" class="card-img">
+                </a>
+
+                <div class="card-content">
+                    <div class="location">
+
+                        <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="title">Oman</span>
+                    </div>
+
+                    <div class="arrow-box">
+
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <a href="#" aria-label="View details for Abu Dhabi">
+                    <img src="https://img.gowed.in/wd-countries/doha.webp" alt="Abu Dhabi" class="card-img">
+                </a>
+
+                <div class="card-content">
+                    <div class="location">
+
+                        <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="title">Doha</span>
+                    </div>
+
+                    <div class="arrow-box">
+
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <a href="#" aria-label="View details for Abu Dhabi">
+                    <img src="https://img.gowed.in/wd-countries/bahrain_wd.webp" alt="Abu Dhabi" class="card-img">
+                </a>
+
+                <div class="card-content">
+                    <div class="location">
+
+                        <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="title">Bahrain</span>
+                    </div>
+
+                    <div class="arrow-box">
+
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div style="margin-top: 10px;">
+            <div class="explore">
+                Explore more destination
+            </div>
+        </div>
+    </div>
+    <section class="third">
+        <div class="third-1">
+            <div class="third-2">
+                <h2 class="third-h">
+                    Why choose us
+                </h2>
+                <button class="third-b">
+
+                    Get Best Deals
+
+                </button>
+            </div>
+            <div class="grid" style="    margin-bottom: 37px;">
+                <div class="box">
+                    <div class="box-info">
+                        <img style="width: 56px; height: 56px;"
+                            src="https://www.gowed.in/public/img/site/transparent_pricing.png" alt="">
+                    </div>
+                    <h3 style="font-size: 18px; color: #a61a6f; margin-bottom: 4px;">Transparent Pricing</h3>
+                    <p style="font-size:16px;">Get clear and upfront pricing with no hidden costs.</p>
+                </div>
+                <div class="box">
+                    <div class="box-info">
+                        <img style="width: 56px; height: 56px;"
+                            src="https://www.gowed.in/public/img/site/hassle-free.png" alt="">
+                    </div>
+                    <h3 style="font-size: 18px; color: #a61a6f; margin-bottom: 4px;">Hassle Free Planning</h3>
+                    <p style="font-size:16px;">Effortless wedding planning with expert assistance.</p>
+                </div>
+                <div class="box">
+                    <div class="box-info">
+                        <img style="width: 56px; height: 56px;"
+                            src="https://www.gowed.in/public/img/site/24-hours-support.png" alt="">
+                    </div>
+                    <h3 style="font-size: 18px; color: #a61a6f; margin-bottom: 4px;">24×7 Onsite Support</h3>
+                    <p style="font-size:16px;">Round-the-clock support to ensure a seamless experience.</p>
+                </div>
+                <div class="box">
+                    <div class="box-info">
+                        <img style="width: 56px; height: 56px;"
+                            src="https://www.gowed.in/public/img/site/flexible_payment.png" alt="">
+                    </div>
+                    <h3 style="font-size: 18px; color: #a61a6f; margin-bottom: 4px;">Flexible Payments</h3>
+                    <p style="font-size:16px;">Multiple flexible payment options to suit your needs.</p>
+                </div>
+                <div class="box">
+                    <div class="box-info">
+                        <img style="width: 56px; height: 56px;" src="https://www.gowed.in/public/img/site/marriages.png"
+                            alt="">
+                    </div>
+                    <h3 style="font-size: 18px; color: #a61a6f; margin-bottom: 4px;">272+ Weddings</h3>
+                    <p style="font-size:16px;">Successfully organized over 272+ weddings worldwide.</p>
+                </div>
+                <div class="box">
+                    <div class="box-info">
+                        <img style="width: 56px; height: 56px;" src="https://www.gowed.in/public/img/site/countries.png"
+                            alt="">
+                    </div>
+                    <h3 style="font-size: 18px; color: #a61a6f; margin-bottom: 4px;">272+ Weddings</h3>
+                    <p style="font-size:16px;">Successfully organized over 272+ weddings worldwide.</p>
+                </div>
+
+                <div class="box">
+                    <div class="box-info">
+                        <img style="width: 56px; height: 56px;" src="https://www.gowed.in/public/img/site/success.png"
+                            alt="">
+                    </div>
+                    <h3 style="font-size: 18px; color: #a61a6f; margin-bottom: 4px;">Exclusive Hotel Deals</h3>
+                    <p style="font-size:16px;">Get unmatched rates for luxury 5-star wedding hotels worldwide.</p>
+                </div>
+                <div class="box">
+                    <div class="box-info">
+                        <img style="width: 56px; height: 56px;" src="https://www.gowed.in/public/img/site/bid.png"
+                            alt="">
+                    </div>
+                    <h3 style="font-size: 18px; color: #a61a6f; margin-bottom: 4px;">Hotels Bid for Your Wedding</h3>
+                    <p style="font-size:16px;">Compare custom proposals & choose the best offer.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="container1">
+        <h2 style="font-size: 30px; margin: 0 0 16px;color:#38091a;">Top Wedding Destinations for</h2>
+        <p class="para">Explore the best wedding destinations for this season. Whether it's a serene beach, a grand
+            palace, or a romantic cityscape, find the perfect setting for your special day.</p>
+        <input class="search" type="search" placeholder="Select Month">
+    </section>
+
+    <section>
+
+        <div class="img">
+            <div class="grid">
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/abudhabi.webp" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Abu Dhabi</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/oman_wd.webp" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Oman</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/vietnam_wd.webp" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Vietnam</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/doha.webp" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Doha</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/rasal-khaimah.webp" alt="Abu Dhabi"
+                            class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Doha</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/srilanka_wd.webp" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Sri Lanka</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/wd_thailand.webp" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Thailand</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/bali_wd.webp" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Bali</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/europe_wd.webp" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Europe</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/dubai_wd.webp" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Dubai</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/bahrain_wd.webp" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Bahrain</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a href="#" aria-label="View details for Abu Dhabi">
+                        <img src="https://img.gowed.in/wd-countries/georgia.jpg" alt="Abu Dhabi" class="card-img">
+                    </a>
+
+                    <div class="card-content">
+                        <div class="location">
+
+                            <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 20s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10zm0-8a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="title">Georgia</span>
+                        </div>
+
+                        <div class="arrow-box">
+
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="main">
+        <h2 class="heading1">
+            What Our Couples Say
+        </h2>
+        <p class="paragraph">
+            Real experiences from couples who trusted GoWed.in to make their dream wedding a reality. From venue
+            selection to flawless
+            execution, hear how we made their special day effortless.
+        </p>
+    </div>
+
+    <section class="img">
+        <div class="templates">
+            <div class="testimonials">
+                <div class="photo">
+                    <img style="width: 48px;height: 48px; border-radius: 50%;"
+                        src="https://www.gowed.in/public/img/site/test.jpg" alt="">
+                    <div>
+                        <h3 style="font-size: 16px;font-weight: 600;     color: var(--color-gray-900); margin-bottom: 2px;margin-top: 0px;font-family: "
+                            Kumbh Sans", sans-serif;">Neha Sharma</h3>
+                        <p style="font-size: 16px;  color: #4B5563; margin-bottom: 0px;margin-top: 0px;font-family: "
+                            Kumbh Sans", sans-serif;">Mumbai, India</p>
+                    </div>
+
+                </div>
+                <p style="color: #374151;">
+                    “GoWed.in made our destination wedding in Udaipur a dream come true! From selecting the perfect
+                    venue to managing every detail seamlessly, their team was outstanding. We had the most
+                    stress–free and magical wedding!”
+                </p>
+            </div>
+            <div class="testimonials">
+                <div class="photo">
+                    <img style="width: 48px;height: 48px; border-radius: 50%;"
+                        src="https://www.gowed.in/public/img/site/test2.jpg" alt="">
+                    <div>
+                        <h3 style="font-size: 18px;font-weight: 600; color: #111827; margin-bottom: 4px;margin-top: 0px;font-family: "
+                            Kumbh Sans", sans-serif;">Amit & Priya Verma</h3>
+                        <p style="font-size: 18px;  color: #4B5563; margin-bottom: 0px;margin-top: 0px;font-family: "
+                            Kumbh Sans", sans-serif;">Dubai, UAE</p>
+                    </div>
+
+                </div>
+                <p style="color: #374151;">
+                    “We were amazed by how easy it was to plan our wedding in Dubai through GoWed.in! The best part was
+                    the exclusive deals they secured for us at a luxury venue. Highly recommend their services!”
+                </p>
+            </div>
+            <div class="testimonials">
+                <div class="photo">
+                    <img style="width: 48px;height: 48px; border-radius: 50%;"
+                        src="https://www.gowed.in/public/img/site/test3.jpg" alt="">
+                    <div>
+                        <h3 style="font-size: 18px;font-weight: 600; color: #111827; margin-bottom: 4px;margin-top: 0px;font-family: "
+                            Kumbh Sans", sans-serif;">Samantha Patel</h3>
+                        <p style="font-size: 18px;  color: #4B5563; margin-bottom: 0px;margin-top: 0px;font-family: "
+                            Kumbh Sans", sans-serif;">London, UK</p>
+                    </div>
+
+                </div>
+                <p style="color: #374151;">
+                    “We had no idea where to start with our destination wedding, but GoWed.in handled everything! From
+                    venue comparisons to seamless booking, it was a smooth experience. Thank you for making our big day
+                    stress–free!”
+                </p>
+            </div>
+            <div class="testimonials">
+                <div class="photo">
+                    <img style="width: 48px;height: 48px; border-radius: 50%;"
+                        src="https://www.gowed.in/public/img/site/39.jpg" alt="">
+                    <div>
+                        <h3 style="font-size: 18px;font-weight: 600; color: #111827; margin-bottom: 4px;margin-top: 0px;font-family: "
+                            Kumbh Sans", sans-serif;">Rahul & Meera Joshi</h3>
+                        <p style="font-size: 18px;  color: #4B5563; margin-bottom: 0px;margin-top: 0px;font-family: "
+                            Kumbh Sans", sans-serif;">Bali, Indonesia</p>
+                    </div>
+
+                </div>
+                <p style="color: #374151;">
+                    “GoWed.in was the best decision we made! They helped us find a stunning beachfront resort in Bali,
+                    negotiated amazing perks, and managed everything seamlessly. Our wedding was magical!”
+                </p>
+            </div>
+        </div>
+
+    </section>
+    <section class="one">
+        <div class="img">
+            <h3 class="heading1">How It Works</h3>
+            <p style=" line-height: 1.625;">Planning your dream wedding is now effortless! Follow these simple steps to
+                discover top venues, receive custom offers, and <br>
+                secure the perfect location for your big day.</p>
+        </div>
+        <div class="img">
+            <div class="white">
+                <div class="whitebox">
+                    <div class="content">
+                        <img style="width: 48px; height: 48px;"
+                            src="https://www.gowed.in/public/img/site/business-proposal.png" alt="">
+
+                    </div>
+                    <h3
+                        style="font-size: 20px; margin: 24px 0 0; text-align: center;color: var(--color-gray-900); font-weight: 600;">
+                        Book with Confidence </h3>
+                    <p style="font-size: 16px;color: #212529;">Choose your venue & secure it with transparent pricing.
+                    </p>
+                </div>
+                <div class="whitebox">
+                    <div class="content">
+                        <img style="width: 48px; height: 48px;" src="https://www.gowed.in/public/img/site/booking-2.png"
+                            alt="">
+
+                    </div>
+                    <h3
+                        style="font-size: 20px; margin: 24px 0 0; text-align: center;color: var(--color-gray-900); font-weight: 600;">
+                        Search & Compare </h3>
+                    <p style="font-size: 16px;color: #212529;">Explore the best hotels in top international wedding
+                        destinations.</p>
+                </div>
+                <div class="whitebox">
+                    <div class="content">
+                        <img style="width: 48px; height: 48px;" src="https://www.gowed.in/public/img/site/i-do.png"
+                            alt="">
+
+                    </div>
+                    <h3
+                        style="font-size: 20px; margin: 24px 0 0; text-align: center;color: var(--color-gray-900); font-weight: 600;">
+                        Say ‘I Do’ in Style!</h3>
+                    <p style="font-size: 16px;color: #212529;">Enjoy your dream wedding at a world-class venue.</p>
+                </div>
+                <div class="whitebox">
+                    <div class="content">
+                        <img style="width: 48px; height: 48px;" src="https://www.gowed.in/public/img/site/compare.png"
+                            alt="">
+
+                    </div>
+                    <h3
+                        style="font-size: 20px; margin: 24px 0 0; text-align: center;color: var(--color-gray-900); font-weight: 600;">
+                        Search & Compare </h3>
+                    <p style="font-size: 16px;color: #212529;">Explore the best hotels in top international wedding
+                        destinations.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <section class="table">
+        <div class="table1">
+            <h3 style="font-size: 30px; margin-bottom: 12px; color:#38091a; font-family: font-grotesk;">The GoWed
+                Promise</h3>
+            <p>From handling logistics to blending Indian traditions with international flair, we ensure a seamless
+                <br>wedding experience.
+            </p>
+        </div>
+        <div class="table2">
+            <div class="table3">
+                <div class="table4">
+
+                    Wedding Planning Worries
+
+                </div>
+                <div class="table5">
+                    GoWed.in
+                </div>
+                <div class="table4">
+                    Traditional Planners
+                </div>
+
+
+            </div>
+            <div class="table6">
+                <div class="table7">
+                    Budget for the 'Big Fat Wedding' Abroad?
+                </div>
+                <div class="table9">
+                    Transparent Pricing, No Surprise Expenses! Customizable packages to fit your family's expectations.
+                </div>
+                <div class="table7">
+                    Hidden "Extra" Charges, Vague Quotes, Budget Jhatka! Hourly billing leaves you guessing the final
+                    bill.
+                </div>
+                <div class="table8">
+                    Connecting with Local Vendors, 'Apna Style'? </div>
+                <div class="table9">
+                    Dedicated GoWed Expert, 24/7 Support in Your Time Zone! One point of contact, understands Indian
+                    needs.
+                </div>
+                <div class="table8">
+                    Slow Responses, Impersonal Service, Language Barrier! Difficulty communicating your cultural
+                    requirements.
+                </div>
+                <div class="table8">
+                    Blending Indian Traditions with International Flair?
+                </div>
+                <div class="table9">
+                    Personalized "Made for You" Planning! We blend your traditions with the beauty of your chosen
+                    destination.
+                </div>
+                <div class="table8">
+                    Pre-Set Packages, Limited Customization, 'Apna Touch' Missing! Your wedding feels like a generic
+                    tourist event.
+                </div>
+                <div class="table8">
+                    Finding Indian Catering & Decor Abroad?
+                </div>
+                <div class="table9">
+                    Local In-Destination Experts, Strong Network of Indian Vendors! We bring the best of India to your
+                    international wedding.
+                </div>
+                <div class="table8">
+                    Limited Experience, Regional Blind Spots, Compromised Indian Flavor! Risking your guests'
+                    satisfaction with authentic Indian experiences.
+                </div>
+                <div class="table8">
+                    Managing Guests & Logistics Across Borders?
+                </div>
+                <div class="table9">
+                    We Handle Everything, From Visas to 'Baraat' Coordination! Full logistics, vendor coordination, and
+                    guest management.
+                </div>
+                <div class="table8">
+                    You Handle the Chaos, They Take the Credit! Get ready for endless coordination and family stress.
+                </div>
+                <div class="table8">
+                    Ensuring 'Shagun' & Financial Clarity Abroad?
+                </div>
+                <div class="table9">
+                    Smart Budgeting, Maximum Value! Cost-saving, vendor negotiation, 100% clarity on expenses.
+                </div>
+                <div class="table8">
+                    Budget Overruns, Financial Stress, Unexpected 'Kharcha'! Say goodbye to your peace of mind.
+                </div>
+                <div class="table8">
+                    Tech-Savvy Planning for Family Across Continents?
+                </div>
+                <div class="table9">
+                    Online Tools, Seamless Management! Communication, budgeting, guest lists, all at your fingertips,
+                    accessible to all family members.
+                </div>
+                <div class="table8">
+                    Outdated Methods, Endless Phone Calls, Missed Communication! Dealing with time zone differences and
+                    disorganization.
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="gallery1">
+            <div class="gallery2">
+                <h3 class="gallh">Featured Wedding Hotels</h3>
+                <p class="gallp">
+                    Explore the finest wedding hotels, offering luxurious venues, world-class services, and breathtaking locations. Find the perfect setting for your dream wedding with exclusive deals and seamless booking.
+                </p>
+            </div>
+            <div class="hotel">
+                <div class="hotelcard">
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
 </body>
+
 </html>
